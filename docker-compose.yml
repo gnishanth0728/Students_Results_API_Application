@@ -50,7 +50,7 @@ services:
       JAVA_TOOL_OPTIONS: "-javaagent:/opt/http-flow-agent.jar"
 
     volumes:
-      - ./http-flow-observer/agent/target/http-flow-agent-1.0.0.jar:/opt/http-flow-agent.jar:ro
+      - /home/ubuntu/linux_socket_lab/http-flow-observer/agent/target/http-flow-agent-1.0.0.jar:/opt/http-flow-agent.jar:ro
     ports:
       - "8080:8080"
     depends_on:
