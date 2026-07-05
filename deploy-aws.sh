@@ -16,7 +16,7 @@ NC='\033[0m'
 
 # Step 1: Stop and remove old containers/volumes
 echo -e "${YELLOW}Step 1: Cleaning up old containers and volumes...${NC}"
-sudo docker compose down -v
+sudo docker compose down --remove-orphans -v
 echo -e "${GREEN}✓ Cleaned${NC}\n"
 
 # Step 2: Build images
@@ -49,8 +49,8 @@ echo "  API:       http://3.95.22.151/api"
 echo ""
 
 echo -e "${YELLOW}Useful commands:${NC}"
-echo "  View logs:      sudo docker-compose logs -f"
-echo "  View API logs:  sudo docker-compose logs -f api"
-echo "  Check status:   sudo docker-compose ps"
-echo "  Stop all:       sudo docker-compose down"
+echo "  View logs:      sudo docker compose logs -f"
+echo "  View API logs:  sudo docker compose logs -f api"
+echo "  Check status:   sudo docker compose ps"
+echo "  Stop all:       sudo docker compose down --remove-orphans -v"
 echo ""

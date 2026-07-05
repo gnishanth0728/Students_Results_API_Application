@@ -1,3 +1,5 @@
+name: student-results
+
 services:
   # Nginx Reverse Proxy
   nginx:
