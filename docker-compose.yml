@@ -49,10 +49,12 @@ services:
       SPRING_DATASOURCE_USERNAME: ${DB_USER:-student}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-student123}
       APP_PUBLIC_IP: ${APP_PUBLIC_IP:-localhost}
-      JAVA_TOOL_OPTIONS: "-javaagent:/opt/http-flow-agent.jar"
+      JAVA_TOOL_OPTIONS: "-javaagent:/opt/http-flow-agent.jar=com.example.student"
+      HTTP_FLOW_OUTPUT_DIR: /http-flow-output
 
     volumes:
       - /home/ubuntu/linux_socket_lab/http-flow-observer/agent/target/http-flow-agent-1.0.0.jar:/opt/http-flow-agent.jar:ro
+      - /home/ubuntu/linux_socket_lab/http-flow-observer/output:/http-flow-output
     ports:
       - "8080:8080"
     depends_on:
